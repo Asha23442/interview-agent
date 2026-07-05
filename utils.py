@@ -16,7 +16,7 @@ from groq import Groq
 load_dotenv()
 
 # Constants
-DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-specdec")
+DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 def get_groq_client() -> Groq:
     """

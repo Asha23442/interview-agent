@@ -156,7 +156,7 @@ elif st.session_state.interview_started and not st.session_state.interview_compl
     answer_label = f"Type your answer for Question {idx + 1}:"
     user_ans = st.text_area(
         answer_label,
-        key="temp_answer",
+        value=st.session_state.temp_answer,
         height=150,
         disabled=st.session_state.is_graded,
         placeholder="Type your technical response here. Provide detailed examples where applicable..."
@@ -204,6 +204,7 @@ elif st.session_state.interview_started and not st.session_state.interview_compl
                 if not user_ans.strip():
                     st.warning("Please type a response before submitting or click Skip.")
                 else:
+                    st.session_state.temp_answer = user_ans
                     with st.spinner("Analyzing answer context..."):
                         evaluation = evaluate_answer(
                             question=q_text,
