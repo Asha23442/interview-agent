@@ -1,0 +1,68 @@
+{
+    "candidate_name": "asha",
+    "job_role": "Software Engineer",
+    "experience_level": "Fresher",
+    "overall_score": 0.0,
+    "percentage": 0.0,
+    "final_recommendation": "Reject",
+    "overall_strengths": "None",
+    "overall_weaknesses": "The candidate demonstrated significant gaps in technical knowledge and communication skills across all questions. Key areas for improvement include: \n   * Providing relevant and clear technical information in responses, \n   * Addressing questions directly and professionally, \n   * Demonstrating understanding of fundamental concepts in software engineering, \n   * Showing ability to apply knowledge to practical scenarios, \n   * Improving overall professionalism and clarity in communication.",
+    "evaluations": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between REST and GraphQL, and key scenarios where you would choose one over the other.",
+            "candidate_answer": "dddddddddd",
+            "evaluation": {
+                "score": 0,
+                "strengths": "None",
+                "weaknesses": "The candidate's answer does not provide any relevant technical information, does not address the question, and lacks clarity and professionalism.",
+                "suggested_answer": "REST (Representational State of Resource) and GraphQL are two different approaches to building web APIs. REST is an architectural style that follows a request-response model, where the client sends a request to the server and the server responds with the requested data. GraphQL, on the other hand, is a query language for APIs that allows clients to specify exactly what data they need, reducing the amount of data transferred. Key scenarios where you would choose REST over GraphQL include simple CRUD operations, caching, and when the API is primarily used for data retrieval. GraphQL is preferred when dealing with complex, nested data structures, real-time updates, or when the client needs more control over the data it receives. As a software engineer, understanding the differences and use cases for both REST and GraphQL is crucial for designing efficient and scalable APIs."
+            }
+        },
+        {
+            "question_number": 2,
+            "question": "What are the differences between processes and threads, and how does Python's GIL impact multithreaded applications?",
+            "candidate_answer": "Skipped",
+            "evaluation": {
+                "score": 0,
+                "strengths": "N/A (Skipped by candidate).",
+                "weaknesses": "Question was skipped. No evaluation could be performed.",
+                "suggested_answer": "Review concepts related to this question before the next attempt."
+            }
+        },
+        {
+            "question_number": 3,
+            "question": "How do you design a database schema for a high-traffic e-commerce system to prevent race conditions during checkout?",
+            "candidate_answer": "uut\n",
+            "evaluation": {
+                "score": 0,
+                "strengths": "None",
+                "weaknesses": "The candidate's answer was incomplete and did not provide any relevant technical information to address the question about designing a database schema for a high-traffic e-commerce system to prevent race conditions during checkout.",
+                "suggested_answer": "To design a database schema for a high-traffic e-commerce system and prevent race conditions during checkout, consider the following steps: \n   1. Normalize the database schema to minimize data redundancy and improve data integrity. \n   2. Implement transactions with isolation levels (e.g., SERIALIZABLE) to ensure that concurrent transactions are executed in a way that prevents race conditions. \n   3. Use locking mechanisms (e.g., pessimistic locking) to prevent concurrent modifications to the same data. \n   4. Optimize database queries and indexing to reduce the time spent on database operations, thereby minimizing the window for race conditions to occur. \n   5. Consider using message queues or other asynchronous processing mechanisms to handle tasks like order processing and inventory updates, reducing the load on the database during checkout."
+            }
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of Big O notation and compare the time complexity of Quick Sort vs Merge Sort.",
+            "candidate_answer": "Skipped",
+            "evaluation": {
+                "score": 0,
+                "strengths": "N/A (Skipped by candidate).",
+                "weaknesses": "Question was skipped. No evaluation could be performed.",
+                "suggested_answer": "Review concepts related to this question before the next attempt."
+            }
+        },
+        {
+            "question_number": 5,
+            "question": "Describe a time when you had to debug a difficult performance bottleneck in production. What was your process?",
+            "candidate_answer": "kjkj",
+            "evaluation": {
+                "score": 0,
+                "strengths": "None",
+                "weaknesses": "The candidate's answer does not provide any relevant technical information, does not address the question, and lacks clarity and professionalism.",
+                "suggested_answer": "In a hypothetical scenario where I encountered a difficult performance bottleneck in production, my process would involve several steps. First, I would identify the issue using monitoring tools and logs to understand the nature of the bottleneck. Next, I would isolate the problem by reproducing it in a controlled environment, such as a staging server. Then, I would use debugging tools and profiling techniques to pinpoint the exact cause of the bottleneck. After identifying the root cause, I would implement a fix, which could involve optimizing database queries, improving algorithm efficiency, or enhancing resource allocation. Finally, I would test and validate the fix to ensure it resolves the performance issue without introducing new problems, and then deploy it to production."
+            }
+        }
+    ],
+    "timestamp": "2026-07-05 15:06:06"
+}
