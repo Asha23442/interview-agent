@@ -1,0 +1,68 @@
+{
+    "candidate_name": "Jane Doe",
+    "job_role": "Software Engineer",
+    "experience_level": "Experienced",
+    "overall_score": 8.2,
+    "percentage": 82.0,
+    "final_recommendation": "Hire",
+    "overall_strengths": "Jane exhibits robust clarity on system design, service communication patterns, and concurrency concepts. Her responses to REST API design and scaling are practical and aligned with industry standards.",
+    "overall_weaknesses": "She could elaborate further on system optimization details (e.g. database replication strategies and memory tuning for multithreaded workflows).",
+    "evaluations": [
+        {
+            "question_number": 1,
+            "question": "Explain the difference between REST and GraphQL, and key scenarios where you would choose one over the other.",
+            "candidate_answer": "REST is resource-based where each URL represents a resource. It is simple and uses standard HTTP methods. GraphQL has a single endpoint and allows clients to request exactly the data they need, solving over-fetching and under-fetching. I would choose GraphQL for mobile apps with limited bandwidth, and REST for simple CRUD APIs or when caching is heavily relied upon.",
+            "evaluation": {
+                "score": 9,
+                "strengths": "Accurately details resource architecture, endpoints difference, over/under fetching problems, and bandwidth constraints.",
+                "weaknesses": "Missed mentioning standard schema definitions and tooling differences.",
+                "suggested_answer": "REST utilizes standard HTTP verbs and relies on standard URL routes. GraphQL utilizes a query language and schema definitions, enabling exact data fetching. REST is preferred for simple applications or public endpoints with HTTP caching, whereas GraphQL shines in microservices aggregations or bandwidth-constrained frontend clients."
+            }
+        },
+        {
+            "question_number": 2,
+            "question": "What are the differences between processes and threads, and how does Python's GIL impact multithreaded applications?",
+            "candidate_answer": "A process has its own memory space, while threads of the same process share memory. Python's GIL (Global Interpreter Lock) prevents multiple native threads from executing Python bytecodes at once. This means multithreading doesn't speed up CPU-bound tasks in Python, though it works fine for IO-bound tasks.",
+            "evaluation": {
+                "score": 8,
+                "strengths": "Explains memory sharing differences and GIL constraints on CPU-bound vs IO-bound tasks.",
+                "weaknesses": "Could mention multiprocessing as the standard solution in Python to bypass GIL.",
+                "suggested_answer": "Processes run in separate memory spaces, making context switching heavy but isolated. Threads share the process memory, which is lightweight but requires synchronization. Python's GIL locks execution to a single thread at a time per process. For CPU-bound tasks, developers should use the multiprocessing module instead of threading to utilize multi-core processors."
+            }
+        },
+        {
+            "question_number": 3,
+            "question": "How do you design a database schema for a high-traffic e-commerce system to prevent race conditions during checkout?",
+            "candidate_answer": "I would use transactions with isolation levels, or pessimistic locking on the product inventory rows. Also, using a message queue like RabbitMQ or Kafka can buffer the checkout requests and process them sequentially to prevent concurrent writes.",
+            "evaluation": {
+                "score": 8,
+                "strengths": "Suggests database locks, isolation levels, and asynchronous message queue buffering.",
+                "weaknesses": "Lacks specific details on database isolation levels (e.g. Serializable) or optimistic locking via version numbers.",
+                "suggested_answer": "Use optimistic locking (version column check) for low contention, or pessimistic locking (SELECT FOR UPDATE) for high contention. Ensure standard ACID transactions with Repeatable Read or Serializable isolation levels. At scale, decouple database writes by routing checkouts through a message queue (Kafka/RabbitMQ) to serialize writes on the inventory service."
+            }
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the concept of Big O notation and compare the time complexity of Quick Sort vs Merge Sort.",
+            "candidate_answer": "Big O notation describes the upper bound limit of an algorithm runtime or space in terms of input size. Quick Sort has average O(n log n) and worst O(n^2) complexity. Merge Sort always has O(n log n) complexity but requires extra memory.",
+            "evaluation": {
+                "score": 8,
+                "strengths": "Correctly defines Big O and lists average and worst-case complexities of both sorting algorithms.",
+                "weaknesses": "Does not explain why Quick Sort degrades to O(n^2) or what the space complexity of Merge Sort is.",
+                "suggested_answer": "Big O measures asymptotic growth rate. Quick Sort operates in O(n log n) average but degrades to O(n^2) if pivots are poorly chosen. Merge Sort guarantees O(n log n) time by splitting recursively, but has O(n) auxiliary space complexity. Quick Sort is in-place (O(log n) space) making it often faster in practice due to cache locality."
+            }
+        },
+        {
+            "question_number": 5,
+            "question": "Describe a time when you had to debug a difficult performance bottleneck in production. What was your process?",
+            "candidate_answer": "We noticed API latency spikes. I started by checking database queries using APM tools and found some queries did not have proper indexes. I added index profiling, ran EXPLAIN plans, and added the indexes, which reduced latency by 70%.",
+            "evaluation": {
+                "score": 8,
+                "strengths": "Clear application of diagnostic tools, index optimization, and quantified results (70% latency reduction).",
+                "weaknesses": "Could detail other metrics examined (CPU, RAM, network) to show a broader troubleshooting scope.",
+                "suggested_answer": "Adopt a top-down investigation method: first, examine infrastructure dashboards (CPU, memory, disk I/O, network) and application metrics (APM). Second, trace request flow to isolate database vs logic delays. Use database query analysis (EXPLAIN ANALYZE) to identify missing indexes or query planning issues. Lastly, implement fixes in a staging environment under load test before deploying to production."
+            }
+        }
+    ],
+    "timestamp": "2026-07-05 15:00:00"
+}
